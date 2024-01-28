@@ -1,0 +1,146 @@
+body {
+    height: auto;
+    text-align: justify;
+    display: flex;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#navbar {
+    margin: 2rem;
+}
+
+header a {
+    text-decoration: none;
+}
+
+.logo {
+    font-size: 2vw;
+    color: rgb(199, 193, 193);
+    font-weight: 600;
+    letter-spacing: -2px;
+    background-color: #1B1B1B;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+}
+
+.nav-list {
+    font-size: 1.8vw;
+    color: black;
+    list-style-type: none;
+    margin-left: -2rem;
+}
+
+.nav-list a {
+    color: rgb(56, 55, 55);
+}
+
+.nav-list a:hover {
+    color: rgb(123, 97, 131);
+}
+
+.nav-list a:active {
+    color: rgb(123, 97, 131);
+}
+
+main {
+    margin: 1rem 1rem 2rem 4rem;
+    width: 65%;
+}
+
+p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.5vw;
+}
+
+h1 {
+    text-align: center;
+    color:rgb(63, 28, 71)
+}
+
+.main-section {
+    padding-bottom: 1rem;
+}
+
+code {
+    background-color: #1B1B1B;
+    color: rgb(175, 172, 172);
+    opacity: 80%;
+    padding: 5px;
+    border-radius: 6px;
+}
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+  
+.mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: #0e0b0b;
+    margin: 8px;
+    transition: 0.1s;
+}
+  
+@media (max-width: 999px) {
+    body {
+      overflow-x: hidden;
+    }
+    .logo {
+        display: none;
+        cursor: pointer;
+    }
+    .nav-list {
+      position: fixed;
+      top: 8vh;
+      left: 0;
+      width: 30%;
+      height: 92vh;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      transform: translateX(100%);
+      transition: transform 0.1s ease-in;
+      margin-top: 2rem;
+      font-size: 2vw;
+      letter-spacing: -1px;
+    }
+    .nav-list li {
+      margin-left: 0;
+      opacity: 0;
+      padding: 0.7rem;
+    }
+    .mobile-menu {
+      display: block;
+    }
+    main {
+        position: relative;
+    }
+  }
+  
+  .nav-list.active {
+    transform: translateX(0);
+  }
+  
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  .mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+  }
+  
+  .mobile-menu.active .line2 {
+    opacity: 0;
+  }
+  
+  .mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+  }
